@@ -1,23 +1,24 @@
-# param: int, list of int
+# param: int, list of string(numbers)
+# return: string
 def test_case(N, list):
     results = []
     
 
     for i in range(1,N):
         
-        if list[i] not in results:
+        if int(list[i]) not in results:
             if list[i] == list[i-1]:
-                results.append(list[i])
+                results.append(int(list[i]))
             elif i != 1 and list[i] == list[i-2]:
-                results.append(list[i])
+                results.append(int(list[i]))
 
 
     if len(results) == 0:
-        results.append("-1")
+        results.append(-1)
 
 
     results.sort()
-    return " ".join(results)
+    return " ".join(map(str, results))
 
 
 
