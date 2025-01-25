@@ -1,14 +1,3 @@
-
-
-# return: int
-def get_var():
-    X = input()
-    while not X.isdigit():
-        X = input()
-    return int(X)
-
-
-
 # param: int, list of int
 def test_case(N, list):
     results = []
@@ -21,16 +10,6 @@ def test_case(N, list):
                 results.append(list[i])
             elif i != 1 and list[i] == list[i-2]:
                 results.append(list[i])
-
-
-
-
-
-
-
-
-
-
 
 
     if len(results) == 0:
@@ -46,14 +25,16 @@ def test_case(N, list):
 '''Call the program'''
 
 # number of test cases
-T = get_var()
+T = int(input())
+N = []
+hay = []
 
 for i in range(T):
     # number of cows
-    N = get_var()
-    # what each of the cows like. List
-    # (1 ≤ h_i ≤ N)
-    hay = input().split()
+    N.append(int(input()))
+    # what each of the cows like. List inside list
+    hay.append(input().split())
     
 
-    print(test_case(N, hay))
+for i in range(T):
+    print(test_case(N[i], hay[i]))
